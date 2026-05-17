@@ -24,7 +24,7 @@ spec:
         - name: TESTE
           valueFrom:
             secretKeyRef:
-              name: facilitacaixa.api-secret
+              name: facilitacaixa-api-secret
               key: TESTE
         ports:
         - name: http
