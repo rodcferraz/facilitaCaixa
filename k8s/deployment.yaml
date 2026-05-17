@@ -20,12 +20,12 @@ spec:
       - name: app
         image: rodcferraz/facilitacaixa-api:latest
         imagePullPolicy: Always
-        # env:
-        # - name: TESTE
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: facilitacaixa-api-secret
-        #       key: TESTE
+        env:
+        - name: TESTE
+          valueFrom:
+            secretKeyRef:
+              name: facilitacaixa-api-secret
+              key: TESTE
         ports:
         - name: http
           containerPort: 8080
