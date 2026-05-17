@@ -1,11 +1,11 @@
 # Namespaces isolam recursos dentro do mesmo cluster (quotas, RBAC, DNS).
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: production
-  labels:
-    app.kubernetes.io/part-of: rg-hackaton
-    environment: prod
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: production
+#   labels:
+#     app.kubernetes.io/part-of: rg-hackaton
+#     environment: prod
 # ---
 # apiVersion: v1
 # kind: ResourceQuota
