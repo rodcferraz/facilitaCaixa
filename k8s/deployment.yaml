@@ -20,12 +20,12 @@ spec:
       - name: app
         image: rodcferraz/facilitacaixa-api:latest
         imagePullPolicy: Always
-        env:
-        - name: TESTE
-          valueFrom:
-            secretKeyRef:
-              name: facilitacaixa-api-secret
-              key: TESTE
+        # env:
+        # - name: TESTE
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: facilitacaixa-api-secret
+        #       key: TESTE
         ports:
         - name: http
           containerPort: 8080
@@ -36,15 +36,15 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "500m"
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 30
-          periodSeconds: 10
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 5
+        # livenessProbe:
+        #   httpGet:
+        #     path: /health
+        #     port: 8080
+        #   initialDelaySeconds: 30
+        #   periodSeconds: 10
+        # readinessProbe:
+        #   httpGet:
+        #     path: /ready
+        #     port: 8080
+        #   initialDelaySeconds: 5
+        #   periodSeconds: 5
