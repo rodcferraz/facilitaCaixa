@@ -1,0 +1,21 @@
+# Namespaces isolam recursos dentro do mesmo cluster (quotas, RBAC, DNS).
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+  labels:
+    app.kubernetes.io/part-of: rg-hackaton
+    environment: prod
+# ---
+# apiVersion: v1
+# kind: ResourceQuota
+# metadata:
+#   name: desafio-hackaton-quota
+#   namespace: production
+# spec:
+#   hard:
+#     pods: "3"
+#     requests.cpu: "4"
+#     requests.memory: 4Gi
+#     limits.cpu: "8"
+#     limits.memory: 8Gi
