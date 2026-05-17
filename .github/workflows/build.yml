@@ -172,17 +172,17 @@ jobs:
       run: |
         kubectl create namespace ${{ env.K8S_NAMESPACE }} --dry-run=client -o yaml | kubectl apply -f -
 
-    # - name: Aplicar Secret
-    #   run: |
-    #     kubectl apply -f k8s/secret.yaml -n ${{ env.K8S_NAMESPACE }}
+    - name: Aplicar Secret
+      run: |
+        kubectl apply -f k8s/secret.yaml -n ${{ env.K8S_NAMESPACE }}
 
     - name: Aplicar Deployment
       run: |
         kubectl apply -f k8s/deployment.yaml -n ${{ env.K8S_NAMESPACE }}
 
-    # - name: Aplicar Service
-    #   run: |
-    #     kubectl apply -f k8s/service.yaml -n ${{ env.K8S_NAMESPACE }}
+    - name: Aplicar Service
+      run: |
+        kubectl apply -f k8s/service.yaml -n ${{ env.K8S_NAMESPACE }}
 
     - name: Verify deployment
       run: |
