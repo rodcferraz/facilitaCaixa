@@ -1,4 +1,8 @@
+using FacilitaCaixa.Api.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var appSettings = builder.GetAppSettingsKeyVaultValues();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -36,7 +40,7 @@ app.MapGet("/weatherforecast", () =>
 
 app.MapGet("/teste", () =>
 {
-    return builder.Configuration.GetValue<string>("Teste");
+    return appSettings.Teste;
 })
 .WithName("GetTeste")
 .WithOpenApi();
